@@ -7,7 +7,7 @@ import os
 dotfilesDir = "/home/margarida/Documents/dotfiles"
 print(dotfilesDir)
 
-dirName = dotfilesDir + "/Wallpapers/set2/"
+dirName = dotfilesDir + "/Wallpapers/set1/"
 
 listOfFile = os.listdir(dirName)
 allFiles = list()
@@ -29,7 +29,7 @@ myCmd = 'wpg -s ' + randWallpaper + ' && wal -i ' + randWallpaper + " && exit"
 os.system(myCmd)
 
 # Update Spotify and Dunst
-myCmd = 'spicetify update && rm ~/.Xresources && cp $HOME/.cache/wal/.Xresources $HOME && xrdb -merge ~/.Xresources && cp $HOME/.cache/wal/dunstrc $HOME/.config/dunst/ && cp -r $HOME/.cache/wal/KritaPywal.colors $HOME/.local/share/krita/color-schemes/ && exit'
+myCmd = 'spicetify update && rm ~/.Xresources && cp $HOME/.cache/wal/.Xresources $HOME && xrdb -merge ~/.Xresources && cp $HOME/.cache/wal/dunstrc $HOME/.config/dunst/ && exit'
 
 os.system(myCmd)
 

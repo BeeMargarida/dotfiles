@@ -4,4 +4,4 @@ sleep 1
 
 sudo cp $1/Apps/lightdm/* /etc/lightdm/
 sudo rm -rf /usr/share/backgrounds/gnome
-sudo cp $1/Wallpapers/* /usr/share/backgrounds
+sudo cp -R $1/Wallpapers/* /usr/share/backgrounds

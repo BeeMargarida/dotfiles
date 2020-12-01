@@ -37,9 +37,6 @@ cp -a .Xresources $HOME/.config/wal/templates
 
 python /home/margarida/Documents/dotfiles/Scripts/pythonScripts/wallpaperAndColorScheme.py
 
-cp $HOME/.cache/wal/dunstrc $HOME/.config/dunst/
-cp $HOME/.cache/wal/.Xresources $HOME/
-
 cp /home/margarida/Documents/dotfiles/Configs/config.ini $HOME/.config/spicetify
 
 cp -r /home/margarida/Documents/dotfiles/Apps/spicetify/* $HOME/.config/spicetify/Themes/Yoo
@@ -80,4 +77,3 @@ echo "Updated $1, homie."
 sleep 0.1
 
 exit 0
-E
