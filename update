@@ -22,11 +22,6 @@ cd $DOTFILES_DIR/Apps
 
 cp -r ranger $HOME/.config/
 
-cp -r krita/Config/krita*rc $HOME/.config/
-cp -a krita/Config/KritaPywal.colors $HOME/.config/wal/templates
-
-cp -r krita/Resources/* $HOME/.local/share/krita/
-
 cp -r polybar/* $HOME/.config/polybar/
 
 cd $DOTFILES_DIR/Configs

@@ -41,7 +41,7 @@ bindsym $mod+Control+Down move down
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Handles shutdown,restart and locking features
-bindsym $mod+Shift+s mode "$mode_system"
+bindsym $mod+0 mode "$mode_system"
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
@@ -87,15 +87,13 @@ mode "resize" {
 # Hotkeys
 bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+F2 exec --no-startup-id urxvt -e ranger
-bindsym $mod+F3 exec --no-startup-id nautilus
-bindsym $mod+F4 exec --no-startup-id krita
-bindsym $mod+F5 exec --no-startup-id spotify
+bindsym $mod+F3 exec --no-startup-id code-oss
 
 # Print Screen
 bindsym Mod4+Shift+s --release exec --no-startup-id flameshot gui
 
 # start a terminal
-bindsym $mod+Shift+Return exec urxvt --no-startup-id -e fish
+bindsym $mod+Shift+Return exec urxvt --no-startup-id -e zsh
 
 # split orientation
 bindsym $mod+h split h;exec --no-startup-id notify-send 'Tile Horizontally'
@@ -138,17 +136,24 @@ bindsym $mod+Shift+k exec --no-startup-id killall -q polybar
 ##########
 # Volume #
 ##########
-bindsym XF86AudioLowerVolume exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/volumeControl down 5
-bindsym XF86AudioRaiseVolume exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/volumeControl up 5
-bindsym XF86AudioMute exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/volumeControl mute
+# bindsym XF86AudioLowerVolume exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/volumeControl down 5
+# bindsym XF86AudioRaiseVolume exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/volumeControl up 5
+# bindsym XF86AudioMute exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/volumeControl mute
 
-bindsym $mod+Shift+j exec --no-startup-id pacmd set-source-volume 2 20000
+# bindsym $mod+Shift+j exec --no-startup-id pacmd set-source-volume 2 20000
 
 #########
 # Media #
 #########
 
-bindsym $mod+Shift+v exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py toggle
-bindsym $mod+Shift+b exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py previous
-bindsym $mod+Shift+n exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py next
-bindsym $mod+Shift+m exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py info
+# bindsym $mod+Shift+v exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py toggle
+# bindsym $mod+Shift+b exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py previous
+# bindsym $mod+Shift+n exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py next
+# bindsym $mod+Shift+m exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/mediaPlayerController.py info
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
