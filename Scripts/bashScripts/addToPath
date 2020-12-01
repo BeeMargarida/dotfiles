@@ -7,8 +7,8 @@ DOTFILES_DIR=${PWD}
 
 sudo touch /etc/profile.d/dotfiles
 echo "#!/bin/bash" | sudo tee -a /etc/profile.d/dotfiles
-echo "export PATH=DOTFILES_DIR=$DOTFILES_DIR" | sudo tee -a /etc/profile.d/dotfiles
-echo "export PATH=$PATH:$DOTFILES_DIR" | sudo tee -a /etc/profile.d/dotfiles
+echo "export PATH=DOTFILES_DIR=/home/margarida/Documents/dotfiles" | sudo tee -a /etc/profile.d/dotfiles
+echo "export PATH=$PATH:/home/margarida/Documents/dotfiles" | sudo tee -a /etc/profile.d/dotfiles
 
 echo "Added!"
 sleep 1

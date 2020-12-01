@@ -46,15 +46,15 @@ DOTFILES_DIR=${PWD}
 
 sudo touch /etc/profile.d/dotfiles
 echo "#!/bin/bash" | sudo tee -a /etc/profile.d/dotfiles
-echo "export PATH=DOTFILES_DIR=$DOTFILES_DIR" | sudo tee -a /etc/profile.d/dotfiles
-echo "export PATH=$PATH:$DOTFILES_DIR" | sudo tee -a /etc/profile.d/dotfiles
+echo "export PATH=DOTFILES_DIR=/home/margarida/Documents/dotfiles" | sudo tee -a /etc/profile.d/dotfiles
+echo "export PATH=$PATH:/home/margarida/Documents/dotfiles" | sudo tee -a /etc/profile.d/dotfiles
 
 echo "Added!"
 sleep 1
 
 # This is also done right now so that the rest of the script can go along nicely, even without a reboot
-export DOTFILES_DIR=$DOTFILES_DIR
-export PATH=$PATH:$DOTFILES_DIR
+export DOTFILES_DIR=/home/margarida/Documents/dotfiles
+export PATH=$PATH:/home/margarida/Documents/dotfiles
 
 echo "Setting up Void repositories..."
 sleep 1
@@ -95,7 +95,7 @@ echo "set preview_script $HOME/.config/ranger/scope.sh" >> Apps/ranger/rc.conf
 echo "\nSetting up $device configurations..."
 sleep 1
 
-cd $DOTFILES_DIR
+cd /home/margarida/Documents/dotfiles
 
 ./update $device
 
@@ -112,7 +112,7 @@ then
 	if [ $answer == "y" ]
 	then 
 		sudo xbps-install -S nvidia lib32-nvidia-utils xf86-video-intel
-		sudo mv $DOTFILES_DIR/Configs/30-nvidia.conf /etc/X11/xorg.conf.d/
+		sudo mv /home/margarida/Documents/dotfiles/Configs/30-nvidia.conf /etc/X11/xorg.conf.d/
 	fi 
 
 elif [ $device == $desktop ]
@@ -121,7 +121,7 @@ then
 	polybar left && polybar right
 fi
 
-cd $DOTFILES_DIR/Scripts/setupScripts/
+cd /home/margarida/Documents/dotfiles/Scripts/setupScripts/
 
 ./moveScriptsToBin
 
@@ -129,10 +129,10 @@ cd $DOTFILES_DIR/Scripts/setupScripts/
 echo "Installing GRUB theme..."
 sleep 1
 
-sudo $DOTFILES_DIR/Apps/grub/install.sh -v
+sudo /home/margarida/Documents/dotfiles/Apps/grub/install.sh -v
 
 # First wal run
-python $DOTFILES_DIR/Scripts/pythonScripts/wallpaperAndColorScheme.py
+python /home/margarida/Documents/dotfiles/Scripts/pythonScripts/wallpaperAndColorScheme.py
 
 # Fix small error for VLC downloading
 mkdir ~/.cache/vlc
@@ -149,7 +149,7 @@ sleep 3
 wpg-install.sh -i
 wpg-install.sh -g
 
-betterlockscreen -u $DOTFILES_DIR/Wallpapers/wallhaven-83do1o.jpg 
+betterlockscreen -u /home/margarida/Documents/dotfiles/Wallpapers/wallhaven-83do1o.jpg 
 
 echo "And that's it!"
 sleep 1

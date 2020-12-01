@@ -3,14 +3,16 @@
 laptop="laptop"
 desktop="desktop"
 
+DOTFILES_DIR=${PWD}
+
 read -p "On which device are you installing my dude? 'laptop' or 'desktop'?  " device
 
 echo "Got you fam, installing on $device."
 ./Scripts/bashScripts/addToPath
 
 # This is also done right now so that the rest of the script can go along nicely, even without a reboot
-export DOTFILES_DIR=$DOTFILES_DIR
-export PATH=$PATH:$DOTFILES_DIR
+export DOTFILES_DIR=/home/margarida/Documents/dotfiles
+export PATH=$PATH:/home/margarida/Documents/dotfiles
 
 cd Scripts
 
@@ -30,9 +32,11 @@ then
 	./setupScripts/extraProgramsToInstall.sh $device "arch-based"
 fi
 
-./setupScripts/setupLightDM.sh 
+./setupScripts/setupLightDM /home/margarida/Documents/dotfiles
 
-./setupScripts/setupSpicetify.sh
+./setupScripts/setupSpicetify /home/margarida/Documents/dotfiles
+
+cd ..
 
 # Fix small ranger error 
 echo "set preview_script $HOME/.config/ranger/scope.sh" >> Apps/ranger/rc.conf
@@ -40,13 +44,11 @@ echo "set preview_script $HOME/.config/ranger/scope.sh" >> Apps/ranger/rc.conf
 echo "\nSetting up $device configurations..."
 sleep 1
 
-cd ..
-
 ./update.sh $device
 
-cd $DOTFILES_DIR/Scripts
+cd /home/margarida/Documents/dotfiles/Scripts
 
-./installFonts
+./setupScripts/installFonts
 killall i3bar
 	
 if [ $device == $laptop ]
@@ -63,7 +65,7 @@ then
 	if [ $answer == "y" ]
 	then 
 		sudo pacman -S nvidia lib32-nvidia-utils xf86-video-intel nvidia-prime
-		sudo mv $DOTFILES_DIR/Configs/30-nvidia.conf /etc/X11/xorg.conf.d/
+		sudo mv /home/margarida/Documents/dotfiles/Configs/30-nvidia.conf /etc/X11/xorg.conf.d/
 	fi 
 
 elif [ $device == $desktop ]
@@ -75,10 +77,10 @@ fi
 echo "Installing GRUB theme..."
 sleep 1
 
-sudo $DOTFILES_DIR/Apps/grub/install.sh -v
+sudo /home/margarida/Documents/dotfiles/Apps/grub/install.sh -v
 
 # First wal run
-python $DOTFILES_DIR/Scripts/pythonScripts/wallpaperAndColorScheme.py
+python /home/margarida/Documents/dotfiles/Scripts/pythonScripts/wallpaperAndColorScheme.py
 
 # Fix small error for VLC downloading
 mkdir ~/.cache/vlc
@@ -92,7 +94,7 @@ wpg-install.sh -g
 echo "Change line 93 of this script if you want another lockscreen wallpaper."
 sleep 2 
 
-betterlockscreen -u $DOTFILES_DIR/Wallpapers/wallhaven-83do1o.jpg 
+betterlockscreen -u /home/margarida/Documents/dotfiles/Wallpapers/wallhaven-83do1o.jpg 
 
 echo "If you want to configure VPN, you can do it now."
 sleep 3

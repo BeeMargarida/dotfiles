@@ -4,7 +4,7 @@ import subprocess
 from pathlib import Path
 
 import os
-dotfilesDir = os.environ['DOTFILES_DIR']
+dotfilesDir = "/home/margarida/Documents/dotfiles"
 print(dotfilesDir)
 
 dirName = dotfilesDir + "/Wallpapers/set2/"

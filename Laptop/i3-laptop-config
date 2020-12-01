@@ -18,8 +18,8 @@ exec --no-startup-id synclient HorizTwoFingerScroll=1
 # Extra keybindings #
 #####################
 
-bindsym XF86MonBrightnessDown exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/brightnessControl down
-bindsym XF86MonBrightnessUp exec --no-startup-id $DOTFILES_DIR/Scripts/bashScripts/brightnessControl up
+bindsym XF86MonBrightnessDown exec --no-startup-id /home/margarida/Documents/dotfiles/Scripts/bashScripts/brightnessControl down
+bindsym XF86MonBrightnessUp exec --no-startup-id /home/margarida/Documents/dotfiles/Scripts/bashScripts/brightnessControl up
 
 bindsym $mod+Shift+p exec --no-startup-id polybar main
 

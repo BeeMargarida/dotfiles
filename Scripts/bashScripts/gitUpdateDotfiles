@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $DOTFILES_DIR
+cd /home/margarida/Documents/dotfiles
 
 git add .
 

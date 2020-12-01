@@ -4,7 +4,7 @@ echo "Setting up Spicetify..."
 sleep 1
 
 # Fix small spicetify error 
-echo "prefs_path       = ${HOME}/.config/spotify/prefs" >> Apps/spicetify/config.ini
+echo "prefs_path       = ${HOME}/.config/spotify/prefs" >> $1/Apps/spicetify/config.ini
 
 spicetify backup apply enable-devtool
 spicetify update apply

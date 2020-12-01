@@ -2,12 +2,12 @@
 
 #xrandr --output DisplayPort-1 --off
 
-killall compton 
+killall picom 
 
-xrandr --output HDMI-A-1 --off
+xrandr --output HDMI-1 --off
 
-xrandr --output DisplayPort-1 --primary --mode 1920x1080 --rate 74.97 --rotate normal
+xrandr --output DP-0 --primary --mode 2560x1440 --rate 144.00 --rotate normal
 
 killall polybar
 polybar left &
-compton &
+picom --experimental-backends &

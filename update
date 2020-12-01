@@ -18,13 +18,13 @@ fi
 echo "Configuring apps..."
 sleep 0.1
 
-cd $DOTFILES_DIR/Apps
+cd /home/margarida/Documents/dotfiles/Apps
 
 cp -r ranger $HOME/.config/
 
 cp -r polybar/* $HOME/.config/polybar/
 
-cd $DOTFILES_DIR/Configs
+cd /home/margarida/Documents/dotfiles/Configs
 
 cp redshift.conf $HOME/.config/
 
@@ -34,26 +34,26 @@ cp picom.conf $HOME/.config/picom.conf
 # Dunst and Xresources needs to be updated, and then sent to it's place
 cp dunstrc $HOME/.config/wal/templates
 cp -a .Xresources $HOME/.config/wal/templates
-cp -a .Xresources $HOME/.config/wal/templates
-cp -a rofi.rasi $HOME/.config/wal/templates
+
+python /home/margarida/Documents/dotfiles/Scripts/pythonScripts/wallpaperAndColorScheme.py
 
 cp $HOME/.cache/wal/dunstrc $HOME/.config/dunst/
 cp $HOME/.cache/wal/.Xresources $HOME/
 
-cp $DOTFILES_DIR/Configs/config.ini $HOME/.config/spicetify
+cp /home/margarida/Documents/dotfiles/Configs/config.ini $HOME/.config/spicetify
 
-cp -r $DOTFILES_DIR/Apps/spicetify/* $HOME/.config/spicetify/Themes/Yoo
+cp -r /home/margarida/Documents/dotfiles/Apps/spicetify/* $HOME/.config/spicetify/Themes/Yoo
 
 spicetify update
 
 echo "Configuring setup..."
 sleep 0.1
 
-cd $DOTFILES_DIR 
+cd /home/margarida/Documents/dotfiles 
 
 if [ $1 == $laptop ]
 then 
-    cd $DOTFILES_DIR/Laptop
+    cd /home/margarida/Documents/dotfiles/Laptop
     
     touch $HOME/.config/i3/config
     rm $HOME/.config/i3/config
@@ -64,7 +64,7 @@ then
 
 elif [ $1 == $desktop ]
 then
-    cd $DOTFILES_DIR/Desktop
+    cd /home/margarida/Documents/dotfiles/Desktop
 
     touch $HOME/.config/i3/config
     rm $HOME/.config/i3/config
@@ -80,3 +80,4 @@ echo "Updated $1, homie."
 sleep 0.1
 
 exit 0
+E

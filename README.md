@@ -7,9 +7,9 @@ Note: This was custom made for my own Manjaro (and now Arch) setup, but I have a
 
 The most helpful scripts for you are probably update and \*FreshSetup scripts. The "update" script takes all the important files in the configuration folders, and shoves them where they belong. This includes configuration files for a lot of different things, so please read the script and modify it how much you want :)  The "freshSetup" is to setup fonts, install programs, as well as using update, both for Manjaro and Arch. Again, I reiterate, this was done to automate work on *my* setup, so you may have to tinker with it a bit.
 
-I've tried to make things path-agnostic, so wherever you place this folder is where the setup is configured. Just an important thing to keep in mind, I setup a new environment variable called $DOTFILES_DIR that is referenced liberally throughout the scripts. This variable is set on the FreshSetup script automagically, so there's no need for you to input any information. 
+I've tried to make things path-agnostic, so wherever you place this folder is where the setup is configured. Just an important thing to keep in mind, I setup a new environment variable called /home/margarida/Documents/dotfiles that is referenced liberally throughout the scripts. This variable is set on the FreshSetup script automagically, so there's no need for you to input any information. 
 
-Just keep this in mind, because if you change the location of the dotfiles folder, things *WILL* break. Not catastrophically mind you, but custom configuration keybindings will not be run because the $DOTFILES_DIR now points to the wrong place. 
+Just keep this in mind, because if you change the location of the dotfiles folder, things *WILL* break. Not catastrophically mind you, but custom configuration keybindings will not be run because the /home/margarida/Documents/dotfiles now points to the wrong place. 
 
 I also differentiate between my laptop and desktop, because I have some shortcuts that vary from the two devices, as well as different polybar configurations. If you want to make absolutely sure that nothing will break, please read what the update script does :)
 

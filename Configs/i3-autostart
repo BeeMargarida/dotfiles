@@ -2,7 +2,7 @@
 # Autostart #
 #############
 
-exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/wallpaperAndColorScheme.py
+exec --no-startup-id python /home/margarida/Documents/dotfiles/Scripts/pythonScripts/wallpaperAndColorScheme.py
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -21,6 +21,6 @@ exec --no-startup-id franz
 exec --no-startup-id telegram-desktop
 
 # Intelligent layouts
-exec --no-startup-id python $DOTFILES_DIR/Scripts/pythonScripts/alternatingLayouts.py
+exec --no-startup-id python /home/margarida/Documents/dotfiles/Scripts/pythonScripts/alternatingLayouts.py
 
 
